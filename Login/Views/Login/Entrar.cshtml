@@ -1,0 +1,40 @@
+﻿@model int
+ 
+
+<div class="row">
+    <div class="col-4"></div>
+    @Model
+    <div class="col-4">
+        <form action="/Login/Entrar" method="post">
+            <div class="card text-white bg-dark ">
+                <div class="card-header text-white bg-dark offset-4 col-6 ">
+                    Entre Com os dados
+                </div>
+                <div class="card-body">
+                    <input type="text" name="usuario" class="form-control mt-3" placeholder="Digite o usuario" />
+
+                    <input type="password" name="senha" class="form-control mt-3" placeholder="Digite a senha" />
+
+                    <button type="submit" class="btn btn-success m-3">
+                        Entrar
+                    </button>
+                    <a href="/Home/Index">voltar para tela inicial</a>
+                </div>
+                <div class="card-footer text-white bg-dark">
+                    Esqueceu sua senha ? Clique aqui
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-4"></div>
+</div>
+<script src="/js/Login.js"></script>
+<script>
+    if (@Model == 1) {
+        mensagemLogado();
+    }else if(@Model == 2){
+        alert("Login e senha invalido")
+    }
+
+</script>
